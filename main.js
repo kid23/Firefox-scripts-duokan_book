@@ -5,12 +5,13 @@
 // @include     http://www.duokan.com/*
 // @exclude     http://www.duokan.com/u/*
 // @require     http://code.jquery.com/jquery-1.5.1.min.js
-// @version     1.1
+// @version     1.2
 // @author      KiD <K_I_D[AT]126.com>
 // @grant       none
 // ==/UserScript==
 
 // @history   2013.11.29 改为浮动提示消息，排除不需检查页面
+// @history   2014.1.2   网站改版更新
 
 
 function ShowTip(str) {
@@ -94,11 +95,11 @@ var token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*
 var user_id = document.cookie.replace(/(?:(?:^|.*;\s*)user_id\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 if (user_id =="" || token == "") {ShowTip("请先登录！"); return;}
 //console.log(device_id+"\n"+token+"\n"+user_id+"\n");
-var elements = document.getElementsByClassName("w-bookitm j-bookitm");
+var elements = document.getElementsByClassName("u-bookitm1 j-bookitm");
 var TOTAL = elements.length;
 for(var i=0;i<TOTAL;i++){
 //for(var i in elements) {
-var t = elements[i].getElementsByClassName("cover")[0].getElementsByClassName("w-price")[0].getElementsByTagName("b")[0];
+var t = elements[i].getElementsByClassName("book")[0].getElementsByClassName("u-price")[0].getElementsByTagName("b")[0];
 if (t == undefined) {
     CURRENT = CURRENT + 1; 
     continue;
